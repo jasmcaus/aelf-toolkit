@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6", 
+        "outDir": "out",
+        "lib": [
+            "es6", 
+            "dom"
+        ],
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "rootDir": ".",
+        "strict": true,
+        /* enable all strict type-checking options */
+        "esModuleInterop": true,
+        "noUnusedLocals": false,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+        "strictNullChecks": true,
+        "noUnusedParameters": false,
+        "allowJs": true,
+        "checkJs": false,
+        "skipLibCheck": true,
+        "typeRoots": ["./node_modules/@types", "./node_modules/@machinomy", "./src/debugger/types"]
+    },
+    "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.json", "test/**/*.js", "test/**/*.ts", "test/**/*.json"],
+    "exclude": ["node_modules", ".vscode-test"]
+}
