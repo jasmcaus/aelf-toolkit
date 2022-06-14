@@ -27,9 +27,11 @@ I also hope to launch a web version of this so developers unfamilar/not comforta
 
 With many breaking changes to the main AElf repo, you might encounter various problems when using ***AElf Toolkit***. As such, it is **imperative** you follow the instructions below that have been personally verified by myself. Thanks!
 
+
 ### 1. Pre-requisites
 You might need to have the following already configured on your system:
 1. Redis (accessible via `redis-cli`)
+
 
 ### 2. Clone the AElfProject repo
 ```bash
@@ -68,7 +70,7 @@ Copy the following contents into the file:
 cd <dir-to-extracted-zip/singlenode> && dotnet ~/AElf/AElf.Launcher.dll
 ```
 
-If you're on a Linux or MacOs machine, ensure you give this file executable permissions:
+If you're on a Linux or MacOS machine, ensure you give this file executable permissions:
 ```bash
 $ chmod +x aelf-run-single
 ```
