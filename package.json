@@ -1,0 +1,173 @@
+{
+    "name": "aelf-toolkit",
+    "displayName": "AElf Toolkit",
+    "description": "A Power-packed VSCode Extension for interacting with the AElf Blockchain",
+    "author": "jasmcaus",
+    "publisher": "jasmcaus",
+    "icon": "icon.png",
+    "version": "1.0.5",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jasmcaus/aelf-toolkit"
+    },
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "keywords": [
+        "blockchain",
+        "c#",
+        "aelf",
+        "toolkit",
+        "compiler"
+    ],
+    "categories": [
+        "Extension Packs",
+        "Programming Languages"
+    ],
+    "main": "./out/src/extension.js",
+    "activationEvents": [
+        "onStartupFinished",
+        "onCommand:aelf-toolkit.new_contract",
+        "onCommand:aelf-toolkit.create_wallet",
+        "onCommand:aelf-toolkit.connect_to_instance",
+        "onCommand:aelf-toolkit.stop_local_server",
+        "onCommand:aelf-toolkit.transfer_assets",
+        "onCommand:aelf-toolkit.deploy_contract",
+        "onCommand:aelf-toolkit.invoke_contract",
+        "onCommand:aelf-toolkit.get_transaction_status",
+        "onDebug"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "aelf-toolkit.new_contract",
+                "title": "Create new smart contract",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.create_wallet",
+                "title": "Create a wallet",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.connect_to_instance",
+                "title": "Connect to an AElf node",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.stop_local_server",
+                "title": "Stop a running local node",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.transfer_assets",
+                "title": "Transfer Assets",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.deploy_contract",
+                "title": "Deploy Smart Contract",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.invoke_contract",
+                "title": "Invoke Smart Contract",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.get_transaction_status",
+                "title": "Get Transaction Status",
+                "category": "Blockchain"
+            },
+            {
+                "command": "aelf-toolkit.new_contract",
+                "title": "Create new smart contract",
+                "category": "AElf Toolkit"
+            },
+            {
+                "command": "aelf-toolkit.create_wallet",
+                "title": "Create a wallet",
+                "category": "AElf Toolkit"
+            },
+            {
+                "command": "aelf-toolkit.connect_to_instance",
+                "title": "Connect to an AElf node",
+                "category": "AElf Toolkit"
+            },
+            {
+                "command": "aelf-toolkit.stop_local_server",
+                "title": "Stop a running local node",
+                "category": "AElf Toolkit"
+            },
+            {
+                "command": "aelf-toolkit.transfer_assets",
+                "title": "Transfer Assets",
+                "category": "AElf Toolkit"
+            },
+            {
+                "command": "aelf-toolkit.deploy_contract",
+                "title": "Deploy Smart Contract",
+                "category": "AElf Toolkit"
+            },
+            {
+                "command": "aelf-toolkit.invoke_contract",
+                "title": "Invoke Smart Contract",
+                "category": "AElf Toolkit"
+            },
+            {
+                "command": "aelf-toolkit.get_transaction_status",
+                "title": "Get Transaction Status",
+                "category": "AElf Toolkit"
+            }
+        ]
+    },
+    "scripts": {
+        "all": "npm run package && npm run add",
+        "add": "git add . && git commit -m 'add' && git push",
+        "package": "npx vsce package",
+        "publish": "npx vsce publish",
+        "vscode:prepublish": "npm i && npm run webpack:prod",
+        "compile": "npm cache clean -f && npm run clean && tsc -p ./",
+        "compile:webpack": "npm run clean && tsc -p ./ && npm run webpack:dev",
+        "webpack:prod": "webpack --config webpack.prod.js",
+        "watch:webpack": "webpack --watch --config webpack.dev.js",
+        "copyFiles": "copyfiles -f ./src/debugAdapter/web3ProviderResolver.js ./src/helpers/checkTruffleConfigTemplate.js ./out/src/ ",
+        "watch:tsc": "npm cache clean -f && npm run clean && tsc-watch --onCompilationComplete \"npm run copyFiles\" ",
+        "watch": "npm run watch:tsc",
+        "clean": "rimraf -- ./out/*"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^7.0.0",
+        "@types/lodash": "4.14.178",
+        "@types/node": "^14.14.39",
+        "@types/request": "^2.48.1",
+        "@types/request-promise": "^4.1.44",
+        "@types/rimraf": "^3.0.2",
+        "@types/semver": "^6.0.0",
+        "@types/uuid": "^3.4.4",
+        "@types/vscode": "1.39.0",
+        "copyfiles": "^2.4.1",
+        "file-loader": "^6.2.0",
+        "rimraf": "^3.0.2",
+        "ts-loader": "7.0.2",
+        "tsc-watch": "^4.5.0",
+        "typescript": "3.8.3",
+        "vsce": "latest",
+        "webpack": "5.64.4",
+        "webpack-cli": "^4.9.2",
+        "webpack-merge": "^5.8.0",
+        "which": "^2.0.2"
+    },
+    "dependencies": {
+        "aelf-sdk": "^3.2.40",
+        "fs-extra": "^7.0.1",
+        "hdkey": "^1.1.1",
+        "jsonc-parser": "^3.0.0",
+        "moment": "^2.24.0",
+        "open": "^6.4.0",
+        "request": "^2.88.0",
+        "request-promise": "^4.2.4",
+        "semver": "^6.0.0"
+    }
+}
